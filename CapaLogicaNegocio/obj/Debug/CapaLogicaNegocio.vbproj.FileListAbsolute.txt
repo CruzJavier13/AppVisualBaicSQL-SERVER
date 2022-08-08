@@ -1,0 +1,14 @@
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaLogicaNegocio\bin\Debug\CapaLogicaNegocio.dll
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaLogicaNegocio\bin\Debug\CapaLogicaNegocio.pdb
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaLogicaNegocio\bin\Debug\CapaLogicaNegocio.xml
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaLogicaNegocio\bin\Debug\CapaDato.dll
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaLogicaNegocio\bin\Debug\CapaDato.pdb
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaLogicaNegocio\bin\Debug\CapaDato.xml
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.vbproj.AssemblyReference.cache
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.Resources.resources
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.vbproj.GenerateResource.cache
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.vbproj.CoreCompileInputs.cache
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.vbproj.CopyComplete
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.dll
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.xml
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaLogicaNegocio\obj\Debug\CapaLogicaNegocio.pdb
