@@ -172,7 +172,7 @@ Partial Class frmEmpleado
         Me.txtId.Enabled = False
         Me.txtId.Location = New System.Drawing.Point(120, 19)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(257, 22)
+        Me.txtId.Size = New System.Drawing.Size(230, 22)
         Me.txtId.TabIndex = 2
         '
         'lblEstado
@@ -206,7 +206,7 @@ Partial Class frmEmpleado
         Me.txtNombres.Enabled = False
         Me.txtNombres.Location = New System.Drawing.Point(118, 110)
         Me.txtNombres.Name = "txtNombres"
-        Me.txtNombres.Size = New System.Drawing.Size(257, 22)
+        Me.txtNombres.Size = New System.Drawing.Size(230, 22)
         Me.txtNombres.TabIndex = 4
         '
         'Label4
@@ -223,7 +223,7 @@ Partial Class frmEmpleado
         Me.txtApellidos.Enabled = False
         Me.txtApellidos.Location = New System.Drawing.Point(120, 150)
         Me.txtApellidos.Name = "txtApellidos"
-        Me.txtApellidos.Size = New System.Drawing.Size(257, 22)
+        Me.txtApellidos.Size = New System.Drawing.Size(230, 22)
         Me.txtApellidos.TabIndex = 5
         '
         'Label5
@@ -249,7 +249,7 @@ Partial Class frmEmpleado
         Me.txtDocumento.Enabled = False
         Me.txtDocumento.Location = New System.Drawing.Point(118, 233)
         Me.txtDocumento.Name = "txtDocumento"
-        Me.txtDocumento.Size = New System.Drawing.Size(257, 22)
+        Me.txtDocumento.Size = New System.Drawing.Size(230, 22)
         Me.txtDocumento.TabIndex = 7
         '
         'Label7
@@ -302,7 +302,7 @@ Partial Class frmEmpleado
         Me.cmbTipo.FormattingEnabled = True
         Me.cmbTipo.Location = New System.Drawing.Point(118, 190)
         Me.cmbTipo.Name = "cmbTipo"
-        Me.cmbTipo.Size = New System.Drawing.Size(257, 24)
+        Me.cmbTipo.Size = New System.Drawing.Size(230, 24)
         Me.cmbTipo.TabIndex = 6
         '
         'dtpIngreso

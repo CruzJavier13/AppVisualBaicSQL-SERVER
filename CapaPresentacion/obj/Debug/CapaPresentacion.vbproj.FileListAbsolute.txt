@@ -17,3 +17,4 @@ C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaPresentacion\bin\Debug
 C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaPresentacion\bin\Debug\CapaDato.xml
 C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaPresentacion\obj\Debug\CapaPresentacion.vbproj.CopyComplete
 C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaPresentacion\obj\Debug\CapaPresentacion.frmEmpleado.resources
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaPresentacion\obj\Debug\CapaPresentacion.frm_Gestionar_Documento.resources
