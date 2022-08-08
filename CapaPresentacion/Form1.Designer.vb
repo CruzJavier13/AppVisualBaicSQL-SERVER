@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmEmpleado
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,13 @@ Partial Class frmEmpleado
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.dgvEmpleado = New System.Windows.Forms.DataGridView()
         Me.gbBuscar = New System.Windows.Forms.GroupBox()
         Me.lblTextoBuscar = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.rdCodigo = New System.Windows.Forms.RadioButton()
+        Me.rbCodigo = New System.Windows.Forms.RadioButton()
         Me.rbDocumento = New System.Windows.Forms.RadioButton()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
@@ -69,7 +69,7 @@ Partial Class frmEmpleado
         'gbBuscar
         '
         Me.gbBuscar.Controls.Add(Me.rbDocumento)
-        Me.gbBuscar.Controls.Add(Me.rdCodigo)
+        Me.gbBuscar.Controls.Add(Me.rbCodigo)
         Me.gbBuscar.Controls.Add(Me.txtBuscar)
         Me.gbBuscar.Controls.Add(Me.lblTextoBuscar)
         Me.gbBuscar.Location = New System.Drawing.Point(13, 363)
@@ -97,16 +97,16 @@ Partial Class frmEmpleado
         Me.txtBuscar.Size = New System.Drawing.Size(397, 22)
         Me.txtBuscar.TabIndex = 1
         '
-        'rdCodigo
+        'rbCodigo
         '
-        Me.rdCodigo.AutoSize = True
-        Me.rdCodigo.Location = New System.Drawing.Point(571, 21)
-        Me.rdCodigo.Name = "rdCodigo"
-        Me.rdCodigo.Size = New System.Drawing.Size(94, 20)
-        Me.rdCodigo.TabIndex = 2
-        Me.rdCodigo.TabStop = True
-        Me.rdCodigo.Text = "Por Codigo"
-        Me.rdCodigo.UseVisualStyleBackColor = True
+        Me.rbCodigo.AutoSize = True
+        Me.rbCodigo.Location = New System.Drawing.Point(571, 21)
+        Me.rbCodigo.Name = "rbCodigo"
+        Me.rbCodigo.Size = New System.Drawing.Size(94, 20)
+        Me.rbCodigo.TabIndex = 2
+        Me.rbCodigo.TabStop = True
+        Me.rbCodigo.Text = "Por Codigo"
+        Me.rbCodigo.UseVisualStyleBackColor = True
         '
         'rbDocumento
         '
@@ -358,7 +358,7 @@ Partial Class frmEmpleado
     Friend WithEvents dgvEmpleado As DataGridView
     Friend WithEvents gbBuscar As GroupBox
     Friend WithEvents rbDocumento As RadioButton
-    Friend WithEvents rdCodigo As RadioButton
+    Friend WithEvents rbCodigo As RadioButton
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents lblTextoBuscar As Label
     Friend WithEvents btnNuevo As Button
