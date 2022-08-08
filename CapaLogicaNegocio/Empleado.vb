@@ -7,7 +7,7 @@ Public Class Empleado
     Private comando As New SqlCommand()
     Private leer As SqlDataReader
     Private tabla As New DataTable()
-    Public Function ListarEmpleado(Id As String) As DataTable
+    Public Function ListarEmpleadoId(Id As String) As DataTable
         comando.Connection = DB.Abrir()
         comando.CommandType = CommandType.StoredProcedure
         comando.CommandText = "sp_listar_empleado_id"
@@ -15,8 +15,9 @@ Public Class Empleado
 
         Try
             leer = comando.ExecuteReader()
-            tabla.load(leer)
+            tabla.Load(leer)
             comando.Connection = DB.Cerrar()
+            leer.Close()
             comando.Parameters.Clear()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -24,4 +25,19 @@ Public Class Empleado
         Return tabla
     End Function
 
+    Public Function ListarEmpleado() As DataTable
+        comando.Connection = DB.Abrir()
+        comando.CommandType = CommandType.StoredProcedure
+        comando.CommandText = "sp_listar_empleado"
+
+        Try
+            leer = comando.ExecuteReader()
+            tabla.Load(leer)
+            leer.Close()
+            comando.Connection = DB.Cerrar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Return tabla
+    End Function
 End Class

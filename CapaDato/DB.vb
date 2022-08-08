@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class DB
-    Private coneccion As String = "Data Source=.;Initial Catalog=Empleados;Integrated Security=True"
+    Private coneccion As String = "Data Source=.;Initial Catalog=prueba;Integrated Security=True"
     Private strinDB As New SqlConnection(coneccion)
 
     Public Function Abrir() As SqlConnection
