@@ -64,7 +64,7 @@ Partial Class frmEmpleado
         Me.dgvEmpleado.Name = "dgvEmpleado"
         Me.dgvEmpleado.ReadOnly = True
         Me.dgvEmpleado.Size = New System.Drawing.Size(935, 163)
-        Me.dgvEmpleado.TabIndex = 0
+        Me.dgvEmpleado.TabIndex = 1
         '
         'gbBuscar
         '
@@ -95,7 +95,7 @@ Partial Class frmEmpleado
         Me.txtBuscar.Location = New System.Drawing.Point(93, 17)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(397, 22)
-        Me.txtBuscar.TabIndex = 1
+        Me.txtBuscar.TabIndex = 0
         '
         'rbCodigo
         '

@@ -3,6 +3,7 @@ Public Class frmEmpleado
 
     Private Empleado As New CapaLogicaNegocio.Empleado
     Dim bandera As String
+    Dim confirmar As MsgBoxResult
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LlenarDGVEmpleado()
     End Sub
@@ -33,14 +34,21 @@ Public Class frmEmpleado
         btnGuardar.Enabled = True
 
 
+        LlenarCMB(cmbTipo)
+
         HabulitarTextBox()
+        bandera = "nuevo"
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If bandera = "modificar" Then
-
+            Dim fechaIngreo As String = dtpIngreso.Value.Year & "-" & dtpIngreso.Value.Month & "-" & dtpIngreso.Value.Day
+            Empleado.ActualizarEmpleado(txtId.Text, txtNombres.Text.Trim, txtApellidos.Text.Trim, cmbTipo.Text, txtDocumento.Text.Trim, txtSalarioBase.Text.Trim, fechaIngreo, txtDireccion.Text.Trim)
         End If
-
+        If bandera = "nuevo" Then
+            Dim fechaIngreo As String = dtpIngreso.Value.Year & "-" & dtpIngreso.Value.Month & "-" & dtpIngreso.Value.Day
+            Empleado.InsertarEmpleado(txtNombres.Text.Trim, txtApellidos.Text.Trim, cmbTipo.Text, txtDocumento.Text.Trim, txtSalarioBase.Text.Trim, fechaIngreo, txtDireccion.Text.Trim)
+        End If
 
         btnNuevo.Enabled = True
         btnGuardar.Enabled = False
@@ -74,6 +82,15 @@ Public Class frmEmpleado
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         If bandera = "modificar" Then
+            confirmar = MsgBox("Eliminar empleado Si o No", MessageBoxButtons.YesNo, "Advertencia")
+
+            If confirmar = MsgBoxResult.Yes Then
+                Empleado.ElimiarEmpleado(txtId.Text.Trim)
+                MessageBox.Show("Empleado borrado")
+            Else
+                MessageBox.Show("El empleado no se elimino")
+            End If
+
 
         End If
 
@@ -107,6 +124,7 @@ Public Class frmEmpleado
 
     Private Sub dgvEmpleado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmpleado.CellContentClick
         If rbCodigo.Checked = False And rbDocumento.Checked = False Then
+            LlenarCMB(cmbTipo)
             txtId.Text = dgvEmpleado.Item(0, e.RowIndex).Value
             txtEstado.Text = dgvEmpleado.Item(1, e.RowIndex).Value
             txtNombres.Text = dgvEmpleado.Item(2, e.RowIndex).Value
@@ -117,6 +135,7 @@ Public Class frmEmpleado
             txtSalarioBase.Text = dgvEmpleado.Item(6, e.RowIndex).Value
             dtpIngreso.Value = dgvEmpleado.Item(7, e.RowIndex).Value
             txtDireccion.Text = dgvEmpleado.Item(8, e.RowIndex).Value
+
 
             'dtpIngreso.Enabled = True
             btnGuardar.Enabled = True
@@ -147,5 +166,9 @@ Public Class frmEmpleado
 
     Public Sub LimpiarDGV(dgv As DataGridView)
         dgv.DataSource = Nothing
+    End Sub
+    Public Sub LlenarCMB(cmb As ComboBox)
+        cmb.DisplayMember = "Id"
+        cmb.DataSource = Empleado.LlenarCMB()
     End Sub
 End Class
