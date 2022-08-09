@@ -70,7 +70,7 @@ Public Class Documento
         comando.CommandType = CommandType.StoredProcedure
         comando.CommandText = "sp_insertar_documento"
         comando.Parameters.AddWithValue("@Estado", 1)
-        comando.Parameters.AddWithValue("@Tpo", Tipo)
+        comando.Parameters.AddWithValue("@Tipo", Tipo)
         Try
             res = comando.ExecuteNonQuery()
             comando.Parameters.Clear()
@@ -90,7 +90,25 @@ Public Class Documento
         comando.CommandText = "sp_actualizar_documento"
         comando.Parameters.AddWithValue("@Id", Id)
         comando.Parameters.AddWithValue("@Estado", 1)
-        comando.Parameters.AddWithValue("@Tpo", Tipo)
+        comando.Parameters.AddWithValue("@Tipo", Tipo)
+        Try
+            res = comando.ExecuteNonQuery()
+            comando.Parameters.Clear()
+            comando.Connection = DB.Cerrar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        Return res
+    End Function
+
+    Public Function EliminarDocumento(Id As String)
+        Dim res As Integer
+        comando = New SqlCommand()
+        comando.Connection = DB.Abrir()
+        comando.CommandType = CommandType.StoredProcedure
+        comando.CommandText = "sp_eliminar_documento"
+        comando.Parameters.AddWithValue("@Id", Id)
         Try
             res = comando.ExecuteNonQuery()
             comando.Parameters.Clear()

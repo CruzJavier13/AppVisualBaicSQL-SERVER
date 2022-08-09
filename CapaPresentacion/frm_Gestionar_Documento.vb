@@ -1,6 +1,6 @@
 ﻿Imports CapaLogicaNegocio
 Public Class frm_Gestionar_Documento
-    Private Documento As New CapaLogicaNegocio.Documento()
+    Private Documento As New CapaLogicaNegocio.Documento
     Private bandera As String = ""
     Private confirm As New MsgBoxResult
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
@@ -51,6 +51,49 @@ Public Class frm_Gestionar_Documento
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim res As Integer
 
+        If bandera = "modificar" And txtCodigo.Text <> "" And txtTipo.Text.Trim <> "" Then
+            confirm = MsgBox("Está seguro que desea modificar los datos", MsgBoxStyle.OkCancel, "Advertencia")
+            If confirm = MsgBoxResult.Ok Then
+                res = Documento.ActualizarDocumento(txtCodigo.Text.Trim, txtTipo.Text.Trim)
+                If res = 1 Then
+                    MessageBox.Show("Dato modificado correctamente", "Información")
+                End If
+            End If
+        End If
+        If bandera = "nuevo" And txtTipo.Text.Trim <> "" Then
+            res = Documento.GuardarDocumento(txtTipo.Text.Trim)
+            If res = 1 Then
+                MessageBox.Show("Dato guardado correctamente", "Información")
+            End If
+        End If
+        LimpiarTextBox()
+        LlenarDGV(dgvDocumento)
+
+    End Sub
+
+    Private Sub LimpiarTextBox()
+        txtCodigo.Text = ""
+        txtEstado.Text = ""
+        txtTipo.Text = ""
+
+        txtCodigo.Enabled = True
+        txtEstado.Enabled = True
+        txtTipo.Enabled = True
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Dim res As Integer
+        If bandera = "modificar" And txtCodigo.Text.Trim <> "" Then
+            confirm = MsgBox("Esta seguro de eliminar este dato?", MsgBoxStyle.YesNo, "Advertencia")
+            If confirm = MsgBoxResult.Yes Then
+                res = Documento.EliminarDocumento(txtCodigo.Text.Trim)
+                If res = 1 Then
+                    MsgBox("Dato eliminado correctamente", MsgBoxResult.Ok, "Información")
+                End If
+            End If
+        End If
+        LlenarDGV(dgvDocumento)
     End Sub
 End Class

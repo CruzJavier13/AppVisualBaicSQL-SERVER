@@ -5,7 +5,7 @@ Public Class frmEmpleado
     Dim bandera As String
     Dim confirmar As MsgBoxResult
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LlenarDGVEmpleado()
+        LlenarDGVEmpleado(dgvEmpleado)
     End Sub
 
 
@@ -19,9 +19,9 @@ Public Class frmEmpleado
         Return dgv
     End Function
 
-    Private Function LlenarDGVEmpleado()
+    Private Function LlenarDGVEmpleado(dgv As DataGridView)
         Try
-            dgvEmpleado.DataSource = Empleado.ListarEmpleado()
+            dgv.DataSource = Empleado.ListarEmpleado()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -29,6 +29,7 @@ Public Class frmEmpleado
     End Function
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        LlenarDGVEmpleado(dgvEmpleado)
         btnNuevo.Enabled = False
         btnCancelar.Enabled = True
         btnGuardar.Enabled = True
@@ -44,10 +45,12 @@ Public Class frmEmpleado
         If bandera = "modificar" Then
             Dim fechaIngreo As String = dtpIngreso.Value.Year & "-" & dtpIngreso.Value.Month & "-" & dtpIngreso.Value.Day
             Empleado.ActualizarEmpleado(txtId.Text, txtNombres.Text.Trim, txtApellidos.Text.Trim, cmbTipo.Text, txtDocumento.Text.Trim, txtSalarioBase.Text.Trim, fechaIngreo, txtDireccion.Text.Trim)
+            LlenarDGVEmpleado(dgvEmpleado)
         End If
         If bandera = "nuevo" Then
             Dim fechaIngreo As String = dtpIngreso.Value.Year & "-" & dtpIngreso.Value.Month & "-" & dtpIngreso.Value.Day
             Empleado.InsertarEmpleado(txtNombres.Text.Trim, txtApellidos.Text.Trim, cmbTipo.Text, txtDocumento.Text.Trim, txtSalarioBase.Text.Trim, fechaIngreo, txtDireccion.Text.Trim)
+            LlenarDGVEmpleado(dgvEmpleado)
         End If
 
         btnNuevo.Enabled = True
@@ -66,6 +69,7 @@ Public Class frmEmpleado
         btnEliminar.Enabled = False
         btnCancelar.Enabled = False
 
+        LlenarDGVEmpleado(dgvEmpleado)
         LimpiarTextBox()
         DesabilitarTextBox()
     End Sub
@@ -87,8 +91,10 @@ Public Class frmEmpleado
             If confirmar = MsgBoxResult.Yes Then
                 Empleado.ElimiarEmpleado(txtId.Text.Trim)
                 MessageBox.Show("Empleado borrado")
+                LlenarDGVEmpleado(dgvEmpleado)
             Else
                 MessageBox.Show("El empleado no se elimino")
+                LlenarDGVEmpleado(dgvEmpleado)
             End If
 
 
@@ -154,19 +160,17 @@ Public Class frmEmpleado
 
     Private Sub txtBuscar_TextChanged(sender As Object, e As EventArgs) Handles txtBuscar.TextChanged
         If rbDocumento.Checked = True And txtBuscar.Text.Trim <> String.Empty Then
-            LimpiarDGV(dgvEmpleado)
-            dgvEmpleado.DataSource = Empleado.ListarEmpleadoDocumento(txtBuscar.Text)
+            dgvEmpleado.DataSource = Empleado.ListarEmpleadoDocumento(txtBuscar.Text.Trim)
+            'LlenarDGVEmpleado(dgvEmpleado)
         End If
         If rbCodigo.Checked = True And txtBuscar.Text.Trim <> String.Empty Then
-            LimpiarDGV(dgvEmpleado)
-            dgvEmpleado.DataSource = Empleado.ListarEmpleadoId(txtBuscar.Text)
+
+            dgvEmpleado.DataSource = Empleado.ListarEmpleadoId(txtBuscar.Text.Trim)
+            'LlenarDGVEmpleado(dgvEmpleado)
 
         End If
     End Sub
 
-    Public Sub LimpiarDGV(dgv As DataGridView)
-        dgv.DataSource = Nothing
-    End Sub
     Public Sub LlenarCMB(cmb As ComboBox)
         cmb.DisplayMember = "Id"
         cmb.DataSource = Empleado.LlenarCMB()
