@@ -56,7 +56,7 @@ Partial Class Vacaciones
         Me.btnGenerarPago = New System.Windows.Forms.Button()
         Me.btnCancelarGenerarPago = New System.Windows.Forms.Button()
         Me.btnGuardarPago = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -334,7 +334,7 @@ Partial Class Vacaciones
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label11)
-        Me.GroupBox3.Controls.Add(Me.TextBox1)
+        Me.GroupBox3.Controls.Add(Me.txtDescripcion)
         Me.GroupBox3.Controls.Add(Me.btnGuardarPago)
         Me.GroupBox3.Controls.Add(Me.btnCancelarGenerarPago)
         Me.GroupBox3.Controls.Add(Me.btnGenerarPago)
@@ -389,6 +389,7 @@ Partial Class Vacaciones
         '
         'btnCancelarGenerarPago
         '
+        Me.btnCancelarGenerarPago.Enabled = False
         Me.btnCancelarGenerarPago.Location = New System.Drawing.Point(280, 70)
         Me.btnCancelarGenerarPago.Name = "btnCancelarGenerarPago"
         Me.btnCancelarGenerarPago.Size = New System.Drawing.Size(115, 23)
@@ -398,6 +399,7 @@ Partial Class Vacaciones
         '
         'btnGuardarPago
         '
+        Me.btnGuardarPago.Enabled = False
         Me.btnGuardarPago.Location = New System.Drawing.Point(171, 70)
         Me.btnGuardarPago.Name = "btnGuardarPago"
         Me.btnGuardarPago.Size = New System.Drawing.Size(98, 23)
@@ -405,13 +407,14 @@ Partial Class Vacaciones
         Me.btnGuardarPago.Text = "Guardar"
         Me.btnGuardarPago.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txtDescripcion
         '
-        Me.TextBox1.Location = New System.Drawing.Point(522, 32)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(409, 61)
-        Me.TextBox1.TabIndex = 4
+        Me.txtDescripcion.Enabled = False
+        Me.txtDescripcion.Location = New System.Drawing.Point(522, 32)
+        Me.txtDescripcion.Multiline = True
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.Size = New System.Drawing.Size(409, 61)
+        Me.txtDescripcion.TabIndex = 4
         '
         'Label11
         '
@@ -479,5 +482,5 @@ Partial Class Vacaciones
     Friend WithEvents Label10 As Label
     Friend WithEvents btnGuardarPago As Button
     Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtDescripcion As TextBox
 End Class

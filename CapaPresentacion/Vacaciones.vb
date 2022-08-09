@@ -218,5 +218,17 @@ Public Class Vacaciones
         If txtGenerar.Text <> "" Then
             dgvVacaciones.DataSource = Pago.GenerarPagoVacacion(txtGenerar.Text.Trim)
         End If
+        btnGenerarPago.Enabled = False
+        btnGuardarPago.Enabled = True
+        btnCancelarGenerarPago.Enabled = True
+        txtDescripcion.Enabled = True
+    End Sub
+
+    Private Sub btnGuardarPago_Click(sender As Object, e As EventArgs) Handles btnGuardarPago.Click
+        If txtGenerar.Text <> String.Empty Then
+
+            Pago.GuardarVacacionesPagadas(dgvVacaciones.Item(0, 0).Value.ToString, dgvVacaciones.Item(2, 0).Value.ToString, dgvVacaciones.Item(3, 0).Value.ToString, dgvVacaciones.Item(4, 0).Value.ToString, txtDescripcion.Text.Trim)
+
+        End If
     End Sub
 End Class

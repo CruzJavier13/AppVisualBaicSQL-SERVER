@@ -30,4 +30,28 @@ Public Class VacacionesAPagar
 
         Return tabla
     End Function
+
+    Public Function GuardarVacacionesPagadas(id As String, idvacaciones As String, dias As Decimal, monto As Decimal, descripcion As String) As Integer
+        comando = New SqlCommand()
+        tabla = New DataTable()
+        Dim res As Integer
+        Try
+            comando.Connection = DB.Abrir()
+            comando.CommandType = CommandType.StoredProcedure
+            comando.CommandText = "sp_guardar_pago_vacacion_generado"
+            comando.Parameters.AddWithValue("@id", id)
+            comando.Parameters.AddWithValue("@idvacaciones", idvacaciones)
+            comando.Parameters.AddWithValue("@dias", dias)
+            comando.Parameters.AddWithValue("@monto", monto)
+            comando.Parameters.AddWithValue("@descripcion", descripcion)
+            res = comando.ExecuteNonQuery()
+            comando.Parameters.Clear()
+            comando.Connection = DB.Cerrar()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+        Return res
+    End Function
 End Class
