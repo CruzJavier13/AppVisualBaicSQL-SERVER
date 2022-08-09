@@ -58,6 +58,8 @@ Partial Class frmEmpleado
         '
         Me.dgvEmpleado.AllowUserToAddRows = False
         Me.dgvEmpleado.AllowUserToDeleteRows = False
+        Me.dgvEmpleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvEmpleado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvEmpleado.Location = New System.Drawing.Point(13, 434)
         Me.dgvEmpleado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
