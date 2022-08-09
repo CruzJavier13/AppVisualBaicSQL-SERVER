@@ -129,7 +129,7 @@ Public Class frmEmpleado
     End Sub
 
     Private Sub dgvEmpleado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEmpleado.CellContentClick
-        If rbCodigo.Checked = False And rbDocumento.Checked = False Then
+        If txtBuscar.Text = "" And dgvEmpleado.Rows.Count > -1 Then
             LlenarCMB(cmbTipo)
             txtId.Text = dgvEmpleado.Item(0, e.RowIndex).Value
             txtEstado.Text = dgvEmpleado.Item(1, e.RowIndex).Value
@@ -169,6 +169,10 @@ Public Class frmEmpleado
             'LlenarDGVEmpleado(dgvEmpleado)
 
         End If
+        If txtBuscar.Text = "" Then
+            LlenarDGVEmpleado(dgvEmpleado)
+        End If
+
     End Sub
 
     Public Sub LlenarCMB(cmb As ComboBox)
