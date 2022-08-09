@@ -3,8 +3,12 @@ Imports System.Data
 Public Class Vacaciones
 
     Private Vacacion As New CapaLogicaNegocio.Vaciones()
+    Private Generar As New CapaLogicaNegocio.GenerarVacacion()
     Private tabla As DataTable
     Private bandera As String
+    Private saldo As Decimal
+    Private confirmar As MsgBoxResult
+
     Private Sub txtCodigoEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txtCodigoEmpleado.TextChanged
         tabla = New DataTable()
         tabla = Vacacion.encontrarEmpleado(txtCodigoEmpleado.Text.Trim)
@@ -125,5 +129,74 @@ Public Class Vacaciones
 
     Private Sub Vacaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub btnGenerar_Click(sender As Object, e As EventArgs) Handles btnGenerar.Click
+        tabla = New DataTable()
+        Dim desde As String
+        Dim hasta As String
+        desde = dtpD.Value.Year & "-" & dtpD.Value.Month & "-" & dtpD.Value.Day
+        hasta = dtpH.Value.Year & "-" & dtpH.Value.Month & "-" & dtpH.Value.Day
+        tabla = Generar.GenerarVacacion(txtEmpleado.Text.Trim, desde, hasta)
+        If txtEmpleado.Text <> "" Then
+            If tabla.Rows.Count > 0 Then
+
+                For Each row As DataRow In tabla.Rows
+                    txtCodigo.Text = row(0).ToString
+                    txtEmpleado.Text = row(2).ToString
+                    dtpD.Value = row(3).ToString
+                    dtpH.Value = row(4).ToString
+                    txtSaldo.Text = row(5).ToString
+                    saldo = row(5).ToString
+                Next
+                txtCodigo.Enabled = False
+                txtSaldo.Enabled = False
+                dtpD.Enabled = False
+                dtpH.Enabled = False
+                btnCancelar.Enabled = True
+            End If
+        End If
+
+        btnGenerar.Enabled = False
+        btnGuardarVacaion.Enabled = True
+    End Sub
+
+    Private Sub txtEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txtEmpleado.TextChanged
+        tabla = New DataTable()
+        tabla = Vacacion.encontrarEmpleado(txtEmpleado.Text.Trim)
+
+        If tabla.Rows.Count > 0 Then
+            txtCodigoEmpleado.Enabled = True
+            dtpD.Enabled = True
+            dtpH.Enabled = True
+
+            btnGenerar.Enabled = True
+        End If
+    End Sub
+
+    Private Sub btnGuardarVacaion_Click(sender As Object, e As EventArgs) Handles btnGuardarVacaion.Click
+        tabla = New DataTable
+        Dim desde As String
+        Dim hasta As String
+        desde = dtpD.Value.Year & "-" & dtpD.Value.Month & "-" & dtpD.Value.Day
+        hasta = dtpH.Value.Year & "-" & dtpH.Value.Month & "-" & dtpH.Value.Day
+        tabla = Generar.Buscar(txtEmpleado.Text.Trim)
+
+        If tabla.Rows.Count < 0 Then
+            If saldo < 0 Then
+                confirmar = MsgBox("Esta seguro que desea guardar unas vacaciones con saldo negativo?", MsgBoxStyle.YesNo, "Advertencia")
+
+                If confirmar = MsgBoxResult.Yes Then
+                    Generar.GuardarVacaciones(txtCodigo.Text.Trim, txtEmpleado.Text.Trim, desde, hasta, saldo)
+                End If
+            End If
+        Else
+            MessageBox.Show("Las vacaciones ya an sido generadas pero no se an pagado")
+        End If
+        btnGenerar.Enabled = False
+        btnGenerar.Enabled = True
+        txtCodigo.Text = ""
+        txtCodigoEmpleado.Text = ""
+        btnCancelar.Enabled = False
     End Sub
 End Class
