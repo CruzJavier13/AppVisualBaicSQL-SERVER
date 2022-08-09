@@ -26,13 +26,14 @@ Partial Class Contenedor
         Me.GestionarEmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VacacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionarTipoDeCoumentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionarEmpleadosToolStripMenuItem, Me.VacacionesToolStripMenuItem, Me.GestionarTipoDeCoumentoToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionarEmpleadosToolStripMenuItem, Me.VacacionesToolStripMenuItem, Me.GestionarTipoDeCoumentoToolStripMenuItem, Me.ReporteToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1044, 25)
@@ -57,6 +58,12 @@ Partial Class Contenedor
         Me.GestionarTipoDeCoumentoToolStripMenuItem.Size = New System.Drawing.Size(193, 21)
         Me.GestionarTipoDeCoumentoToolStripMenuItem.Text = "Gestionar tipo de coumento"
         '
+        'ReporteToolStripMenuItem
+        '
+        Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
+        Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(68, 21)
+        Me.ReporteToolStripMenuItem.Text = "Reporte"
+        '
         'Contenedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -79,4 +86,5 @@ Partial Class Contenedor
     Friend WithEvents GestionarEmpleadosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents VacacionesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GestionarTipoDeCoumentoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteToolStripMenuItem As ToolStripMenuItem
 End Class

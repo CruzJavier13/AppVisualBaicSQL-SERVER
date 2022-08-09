@@ -16,4 +16,10 @@
         documento.MdiParent = Me
         documento.Show()
     End Sub
+
+    Private Sub ReporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteToolStripMenuItem.Click
+        Dim reporte As New ReporteInformacionDiasLibres
+        reporte.MdiParent = Me
+        reporte.Show()
+    End Sub
 End Class
