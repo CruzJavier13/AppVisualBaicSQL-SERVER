@@ -50,8 +50,18 @@ Partial Class Vacaciones
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtSaldo = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.dgvVacaciones = New System.Windows.Forms.DataGridView()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtGenerar = New System.Windows.Forms.TextBox()
+        Me.btnGenerarPago = New System.Windows.Forms.Button()
+        Me.btnCancelarGenerarPago = New System.Windows.Forms.Button()
+        Me.btnGuardarPago = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.dgvVacaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -71,14 +81,14 @@ Partial Class Vacaciones
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 13)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(937, 131)
+        Me.GroupBox1.Size = New System.Drawing.Size(937, 110)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Registrar dias libres a cuenta de vacaciones"
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(334, 86)
+        Me.btnModificar.Location = New System.Drawing.Point(334, 66)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(80, 26)
         Me.btnModificar.TabIndex = 5
@@ -88,7 +98,7 @@ Partial Class Vacaciones
         'txtCodigoVacacion
         '
         Me.txtCodigoVacacion.Enabled = False
-        Me.txtCodigoVacacion.Location = New System.Drawing.Point(155, 34)
+        Me.txtCodigoVacacion.Location = New System.Drawing.Point(155, 20)
         Me.txtCodigoVacacion.Name = "txtCodigoVacacion"
         Me.txtCodigoVacacion.Size = New System.Drawing.Size(100, 21)
         Me.txtCodigoVacacion.TabIndex = 0
@@ -96,7 +106,7 @@ Partial Class Vacaciones
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(17, 39)
+        Me.Label4.Location = New System.Drawing.Point(17, 25)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(132, 15)
         Me.Label4.TabIndex = 4
@@ -105,7 +115,7 @@ Partial Class Vacaciones
         'btnCancelar
         '
         Me.btnCancelar.Enabled = False
-        Me.btnCancelar.Location = New System.Drawing.Point(536, 86)
+        Me.btnCancelar.Location = New System.Drawing.Point(536, 66)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(80, 26)
         Me.btnCancelar.TabIndex = 7
@@ -115,7 +125,7 @@ Partial Class Vacaciones
         'btnGuardar
         '
         Me.btnGuardar.Enabled = False
-        Me.btnGuardar.Location = New System.Drawing.Point(450, 86)
+        Me.btnGuardar.Location = New System.Drawing.Point(450, 66)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(80, 26)
         Me.btnGuardar.TabIndex = 6
@@ -124,7 +134,7 @@ Partial Class Vacaciones
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(248, 86)
+        Me.btnNuevo.Location = New System.Drawing.Point(248, 66)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(80, 26)
         Me.btnNuevo.TabIndex = 4
@@ -135,7 +145,7 @@ Partial Class Vacaciones
         '
         Me.dtpHasta.Enabled = False
         Me.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpHasta.Location = New System.Drawing.Point(811, 34)
+        Me.dtpHasta.Location = New System.Drawing.Point(811, 20)
         Me.dtpHasta.Name = "dtpHasta"
         Me.dtpHasta.Size = New System.Drawing.Size(120, 21)
         Me.dtpHasta.TabIndex = 3
@@ -144,7 +154,7 @@ Partial Class Vacaciones
         '
         Me.dtpDesde.Enabled = False
         Me.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDesde.Location = New System.Drawing.Point(622, 34)
+        Me.dtpDesde.Location = New System.Drawing.Point(622, 20)
         Me.dtpDesde.Name = "dtpDesde"
         Me.dtpDesde.Size = New System.Drawing.Size(116, 21)
         Me.dtpDesde.TabIndex = 2
@@ -152,7 +162,7 @@ Partial Class Vacaciones
         'txtCodigoEmpleado
         '
         Me.txtCodigoEmpleado.Enabled = False
-        Me.txtCodigoEmpleado.Location = New System.Drawing.Point(428, 34)
+        Me.txtCodigoEmpleado.Location = New System.Drawing.Point(428, 20)
         Me.txtCodigoEmpleado.Name = "txtCodigoEmpleado"
         Me.txtCodigoEmpleado.Size = New System.Drawing.Size(117, 21)
         Me.txtCodigoEmpleado.TabIndex = 1
@@ -160,7 +170,7 @@ Partial Class Vacaciones
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(761, 37)
+        Me.Label3.Location = New System.Drawing.Point(761, 23)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(44, 15)
         Me.Label3.TabIndex = 0
@@ -169,7 +179,7 @@ Partial Class Vacaciones
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(568, 36)
+        Me.Label2.Location = New System.Drawing.Point(568, 22)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(48, 15)
         Me.Label2.TabIndex = 0
@@ -178,7 +188,7 @@ Partial Class Vacaciones
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(277, 37)
+        Me.Label1.Location = New System.Drawing.Point(277, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(145, 15)
         Me.Label1.TabIndex = 0
@@ -200,7 +210,7 @@ Partial Class Vacaciones
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 150)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 129)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(937, 113)
         Me.GroupBox2.TabIndex = 1
@@ -323,13 +333,94 @@ Partial Class Vacaciones
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Label11)
+        Me.GroupBox3.Controls.Add(Me.TextBox1)
+        Me.GroupBox3.Controls.Add(Me.btnGuardarPago)
+        Me.GroupBox3.Controls.Add(Me.btnCancelarGenerarPago)
+        Me.GroupBox3.Controls.Add(Me.btnGenerarPago)
+        Me.GroupBox3.Controls.Add(Me.txtGenerar)
+        Me.GroupBox3.Controls.Add(Me.Label10)
+        Me.GroupBox3.Controls.Add(Me.dgvVacaciones)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 269)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 248)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(937, 207)
+        Me.GroupBox3.Size = New System.Drawing.Size(937, 228)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Pago de vacaciones"
+        '
+        'dgvVacaciones
+        '
+        Me.dgvVacaciones.AllowUserToAddRows = False
+        Me.dgvVacaciones.AllowUserToDeleteRows = False
+        Me.dgvVacaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgvVacaciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgvVacaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvVacaciones.Location = New System.Drawing.Point(6, 99)
+        Me.dgvVacaciones.Name = "dgvVacaciones"
+        Me.dgvVacaciones.ReadOnly = True
+        Me.dgvVacaciones.Size = New System.Drawing.Size(925, 123)
+        Me.dgvVacaciones.TabIndex = 0
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(17, 32)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(159, 16)
+        Me.Label10.TabIndex = 1
+        Me.Label10.Text = "Codigo del Empleado"
+        '
+        'txtGenerar
+        '
+        Me.txtGenerar.Location = New System.Drawing.Point(200, 29)
+        Me.txtGenerar.Name = "txtGenerar"
+        Me.txtGenerar.Size = New System.Drawing.Size(195, 22)
+        Me.txtGenerar.TabIndex = 2
+        '
+        'btnGenerarPago
+        '
+        Me.btnGenerarPago.Location = New System.Drawing.Point(12, 70)
+        Me.btnGenerarPago.Name = "btnGenerarPago"
+        Me.btnGenerarPago.Size = New System.Drawing.Size(153, 23)
+        Me.btnGenerarPago.TabIndex = 3
+        Me.btnGenerarPago.Text = "Generar Pago"
+        Me.btnGenerarPago.UseVisualStyleBackColor = True
+        '
+        'btnCancelarGenerarPago
+        '
+        Me.btnCancelarGenerarPago.Location = New System.Drawing.Point(280, 70)
+        Me.btnCancelarGenerarPago.Name = "btnCancelarGenerarPago"
+        Me.btnCancelarGenerarPago.Size = New System.Drawing.Size(115, 23)
+        Me.btnCancelarGenerarPago.TabIndex = 3
+        Me.btnCancelarGenerarPago.Text = "Cancelar"
+        Me.btnCancelarGenerarPago.UseVisualStyleBackColor = True
+        '
+        'btnGuardarPago
+        '
+        Me.btnGuardarPago.Location = New System.Drawing.Point(171, 70)
+        Me.btnGuardarPago.Name = "btnGuardarPago"
+        Me.btnGuardarPago.Size = New System.Drawing.Size(98, 23)
+        Me.btnGuardarPago.TabIndex = 3
+        Me.btnGuardarPago.Text = "Guardar"
+        Me.btnGuardarPago.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(522, 32)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(409, 61)
+        Me.TextBox1.TabIndex = 4
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(425, 32)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(91, 16)
+        Me.Label11.TabIndex = 5
+        Me.Label11.Text = "Descripción"
         '
         'Vacaciones
         '
@@ -346,6 +437,9 @@ Partial Class Vacaciones
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        CType(Me.dgvVacaciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -378,4 +472,12 @@ Partial Class Vacaciones
     Friend WithEvents txtSaldo As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents dgvVacaciones As DataGridView
+    Friend WithEvents btnCancelarGenerarPago As Button
+    Friend WithEvents btnGenerarPago As Button
+    Friend WithEvents txtGenerar As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents btnGuardarPago As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class

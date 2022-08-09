@@ -82,6 +82,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="VacacionesAPagar.vb" />
     <Compile Include="Vaciones.vb" />
   </ItemGroup>
   <ItemGroup>

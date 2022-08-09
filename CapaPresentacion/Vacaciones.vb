@@ -4,6 +4,7 @@ Public Class Vacaciones
 
     Private Vacacion As New CapaLogicaNegocio.Vaciones()
     Private Generar As New CapaLogicaNegocio.GenerarVacacion()
+    Private Pago As New CapaLogicaNegocio.VacacionesAPagar()
     Private tabla As DataTable
     Private bandera As String
     Private saldo As Decimal
@@ -128,9 +129,11 @@ Public Class Vacaciones
     End Sub
 
     Private Sub Vacaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Llenar(dgvVacaciones)
     End Sub
-
+    Public Sub Llenar(dgv As DataGridView)
+        dgv.DataSource = Generar.BuscarVacacionPagar()
+    End Sub
     Private Sub btnGenerar_Click(sender As Object, e As EventArgs) Handles btnGenerar.Click
         tabla = New DataTable()
         Dim desde As String
@@ -198,5 +201,22 @@ Public Class Vacaciones
         txtCodigo.Text = ""
         txtCodigoEmpleado.Text = ""
         btnCancelar.Enabled = False
+    End Sub
+
+    Private Sub txtGenerar_TextChanged(sender As Object, e As EventArgs) Handles txtGenerar.TextChanged
+
+    End Sub
+
+    Private Sub dgvVacaciones_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvVacaciones.CellContentClick
+        If txtGenerar.Text = "" And dgvVacaciones.Rows.Count <> -1 Then
+            txtGenerar.Text = dgvVacaciones.Item(0, e.RowIndex).Value
+        End If
+
+    End Sub
+
+    Private Sub btnGenerarPago_Click(sender As Object, e As EventArgs) Handles btnGenerarPago.Click
+        If txtGenerar.Text <> "" Then
+            dgvVacaciones.DataSource = Pago.GenerarPagoVacacion(txtGenerar.Text.Trim)
+        End If
     End Sub
 End Class
