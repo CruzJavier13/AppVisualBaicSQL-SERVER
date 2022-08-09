@@ -12,6 +12,9 @@ Public Class frm_Gestionar_Documento
         If rbNombre.Checked And TextBox1.Text <> "" Then
             dgvDocumento.DataSource = Documento.ListarDocumentoNombre(TextBox1.Text.Trim)
         End If
+        If TextBox1.Text = String.Empty Then
+            LlenarDGV(dgvDocumento)
+        End If
     End Sub
 
     Private Sub LlenarDGV(dgv As DataGridView)
@@ -26,7 +29,7 @@ Public Class frm_Gestionar_Documento
         btnGuardar.Enabled = True
         btnNuevo.Enabled = False
         btnEliminar.Enabled = False
-        btnCancelar.Enabled = False
+        btnCancelar.Enabled = True
 
         txtTipo.Enabled = True
 
@@ -68,19 +71,25 @@ Public Class frm_Gestionar_Documento
                 MessageBox.Show("Dato guardado correctamente", "Información")
             End If
         End If
-        LimpiarTextBox()
+
         LlenarDGV(dgvDocumento)
 
+        LimpiarTextBox()
+
+        txtCodigo.Enabled = False
+        txtEstado.Enabled = False
+        txtTipo.Enabled = False
+
+        btnNuevo.Enabled = True
+        btnGuardar.Enabled = False
+        btnCancelar.Enabled = False
+        btnEliminar.Enabled = False
     End Sub
 
     Private Sub LimpiarTextBox()
         txtCodigo.Text = ""
         txtEstado.Text = ""
         txtTipo.Text = ""
-
-        txtCodigo.Enabled = True
-        txtEstado.Enabled = True
-        txtTipo.Enabled = True
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
@@ -95,5 +104,28 @@ Public Class frm_Gestionar_Documento
             End If
         End If
         LlenarDGV(dgvDocumento)
+        LimpiarTextBox()
+
+        txtCodigo.Enabled = False
+        txtEstado.Enabled = False
+        txtTipo.Enabled = False
+
+        btnNuevo.Enabled = True
+        btnGuardar.Enabled = False
+        btnCancelar.Enabled = False
+        btnEliminar.Enabled = False
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        LimpiarTextBox()
+
+        txtCodigo.Enabled = False
+        txtEstado.Enabled = False
+        txtTipo.Enabled = False
+
+        btnNuevo.Enabled = True
+        btnGuardar.Enabled = False
+        btnCancelar.Enabled = False
+        btnEliminar.Enabled = False
     End Sub
 End Class

@@ -200,6 +200,7 @@ Partial Class frm_Gestionar_Documento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(521, 428)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnEliminar)
@@ -213,7 +214,9 @@ Partial Class frm_Gestionar_Documento
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.dgvDocumento)
+        Me.MaximizeBox = False
         Me.Name = "frm_Gestionar_Documento"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gestionar Documento"
         CType(Me.dgvDocumento, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
