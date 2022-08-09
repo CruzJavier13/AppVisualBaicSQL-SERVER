@@ -88,7 +88,7 @@ Partial Class Vacaciones
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(334, 66)
+        Me.btnModificar.Location = New System.Drawing.Point(649, 68)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(80, 26)
         Me.btnModificar.TabIndex = 5
@@ -115,7 +115,7 @@ Partial Class Vacaciones
         'btnCancelar
         '
         Me.btnCancelar.Enabled = False
-        Me.btnCancelar.Location = New System.Drawing.Point(536, 66)
+        Me.btnCancelar.Location = New System.Drawing.Point(851, 68)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(80, 26)
         Me.btnCancelar.TabIndex = 7
@@ -125,7 +125,7 @@ Partial Class Vacaciones
         'btnGuardar
         '
         Me.btnGuardar.Enabled = False
-        Me.btnGuardar.Location = New System.Drawing.Point(450, 66)
+        Me.btnGuardar.Location = New System.Drawing.Point(765, 68)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(80, 26)
         Me.btnGuardar.TabIndex = 6
@@ -134,7 +134,7 @@ Partial Class Vacaciones
         '
         'btnNuevo
         '
-        Me.btnNuevo.Location = New System.Drawing.Point(248, 66)
+        Me.btnNuevo.Location = New System.Drawing.Point(563, 68)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(80, 26)
         Me.btnNuevo.TabIndex = 4
@@ -280,7 +280,7 @@ Partial Class Vacaciones
         'btnGenerar
         '
         Me.btnGenerar.Enabled = False
-        Me.btnGenerar.Location = New System.Drawing.Point(117, 71)
+        Me.btnGenerar.Location = New System.Drawing.Point(305, 72)
         Me.btnGenerar.Name = "btnGenerar"
         Me.btnGenerar.Size = New System.Drawing.Size(75, 26)
         Me.btnGenerar.TabIndex = 3
@@ -297,7 +297,7 @@ Partial Class Vacaciones
         'btnGuardarVacaion
         '
         Me.btnGuardarVacaion.Enabled = False
-        Me.btnGuardarVacaion.Location = New System.Drawing.Point(248, 71)
+        Me.btnGuardarVacaion.Location = New System.Drawing.Point(386, 71)
         Me.btnGuardarVacaion.Name = "btnGuardarVacaion"
         Me.btnGuardarVacaion.Size = New System.Drawing.Size(75, 26)
         Me.btnGuardarVacaion.TabIndex = 3
@@ -307,7 +307,7 @@ Partial Class Vacaciones
         'btnCancelarGenerar
         '
         Me.btnCancelarGenerar.Enabled = False
-        Me.btnCancelarGenerar.Location = New System.Drawing.Point(377, 71)
+        Me.btnCancelarGenerar.Location = New System.Drawing.Point(470, 71)
         Me.btnCancelarGenerar.Name = "btnCancelarGenerar"
         Me.btnCancelarGenerar.Size = New System.Drawing.Size(75, 26)
         Me.btnCancelarGenerar.TabIndex = 3

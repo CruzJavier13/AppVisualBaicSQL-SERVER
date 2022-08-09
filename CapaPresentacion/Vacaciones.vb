@@ -222,13 +222,19 @@ Public Class Vacaciones
         btnGuardarPago.Enabled = True
         btnCancelarGenerarPago.Enabled = True
         txtDescripcion.Enabled = True
+        txtGenerar.Enabled = False
     End Sub
 
     Private Sub btnGuardarPago_Click(sender As Object, e As EventArgs) Handles btnGuardarPago.Click
         If txtGenerar.Text <> String.Empty Then
 
             Pago.GuardarVacacionesPagadas(dgvVacaciones.Item(0, 0).Value.ToString, dgvVacaciones.Item(2, 0).Value.ToString, dgvVacaciones.Item(3, 0).Value.ToString, dgvVacaciones.Item(4, 0).Value.ToString, txtDescripcion.Text.Trim)
-
+            btnGuardarPago.Enabled = False
+            btnCancelarGenerarPago.Enabled = False
+            btnGenerarPago.Enabled = True
+            txtDescripcion.Enabled = False
+            txtDescripcion.Text = ""
+            txtGenerar.Text = ""
         End If
     End Sub
 End Class

@@ -19,3 +19,4 @@ C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaPresentacion\obj\Debug
 C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaPresentacion\obj\Debug\CapaPresentacion.frmEmpleado.resources
 C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaPresentacion\obj\Debug\CapaPresentacion.frm_Gestionar_Documento.resources
 C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaPresentacion\obj\Debug\CapaPresentacion.Vacaciones.resources
+C:\Users\Cruz\Desktop\InvercasaPrueba\PruebaInvercasa\CapaPresentacion\obj\Debug\CapaPresentacion.Contenedor.resources
