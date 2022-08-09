@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Documento.vb" />
     <Compile Include="Empleado.vb" />
+    <Compile Include="GenerarVacacion.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
